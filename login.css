@@ -1,0 +1,43 @@
+body{
+    background-image: url("e.jpg");
+    background-size: cover;
+}
+fieldset
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border-radius: 8px;
+    width:200px;
+    font-family: cursive;
+    backdrop-filter: blur(10px);
+    
+}
+h1{color: azure;}
+.alert
+{
+    position: relative;
+    text-align: center;
+    top: 43%;
+    color: white;
+    
+}
+.tb{font-family: cursive;
+    border-radius: 8px;
+    padding: 10px;
+    width: 250px;
+    height: 9px;
+    border: solid 0.5px;
+    margin-top: 13px;
+    margin-bottom: 10px;
+    border-color: rgb(214, 213, 213);
+    text-align: center;
+}
+.sub{
+font-family: cursive;
+border-radius: 8px;
+border: none;
+
+}
