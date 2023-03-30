@@ -1,0 +1,38 @@
+li a {
+    
+    display: block;
+    font-family: cursive;
+    backdrop-filter: blur(10px);
+    color: black;
+    text-decoration: none;
+    
+  }
+  li{
+    border: 1px;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    position: absolute;
+    top: 20%;
+        
+  }
+  body{
+    background-image: url("e.jpg");
+    background-size: cover;
+}
+fieldset
+{
+    position: absolute;
+    left: 42%;
+  align-items: center;
+    width: 200px;
+    height: 588px;
+    text-align: center;
+    border-radius: 8px;
+   
+    font-family: cursive;
+    backdrop-filter: blur(10px);
+}
