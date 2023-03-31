@@ -1,0 +1,59 @@
+body{
+    background-image: url("e.jpg");
+    background-size: cover;
+}
+fieldset
+{
+    border-style: solid;
+    border-color: gray;
+    height: inherit;
+    text-align: center;
+    border-radius: 8px;
+   
+    font-family: cursive;
+    color:azure;
+    backdrop-filter: blur(10px);
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+    margin: 0;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.data{
+    font-size: 24px;
+}
+.home{
+    position: relative;
+    top:20px;
+    left:1125px;
+    font-family: cursive;
+    width:90px;
+    border-radius: 6px;
+    backdrop-filter: blur(10px);
+    font-size: 16px;
+    background: transparent;
+    padding: 3px;
+    margin-right:20px;
+    border-style: solid;
+   border-color: gray;
+   color:azure;
+}
+
+.update{
+    position: relative;
+    font-family: cursive;
+    width:90px;
+    border-radius: 6px;
+    backdrop-filter: blur(10px);
+    font-size: 16px;
+    background: transparent;
+    padding: 3px;
+    border-style: solid;
+    border-color: gray;
+    color:azure;
+    
+}

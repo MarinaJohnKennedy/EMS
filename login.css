@@ -4,6 +4,7 @@ body{
 }
 fieldset
 {
+    border-color: gray;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -13,9 +14,10 @@ fieldset
     width:200px;
     font-family: cursive;
     backdrop-filter: blur(10px);
-    
+   
 }
-h1{color: azure;}
+h1{color: azure;
+}
 .alert
 {
     position: relative;
@@ -24,20 +26,36 @@ h1{color: azure;}
     color: white;
     
 }
-.tb{font-family: cursive;
+.tb{
+    color: gray;
+    font-family: cursive;
     border-radius: 6px;
     padding: 10px;
-    width: 250px;
-    height: 9px;
+    width: 225px;
+    height: 30px;
     border: solid 0.5px;
     margin-top: 13px;
     margin-bottom: 10px;
     border-color: rgb(214, 213, 213);
     text-align: center;
+    border-color: gray;
+    border-style: solid;
+    font-size: 16px;
 }
+
 .sub{
 font-family: cursive;
 border-radius: 6px;
-border: none;
+border-color: gray;
+border-style: solid;
+background: transparent;
+backdrop-filter: blur(10px);
+font-size: 16px;
+width:90px;
+font-weight: 100;
+padding: 3px;
+border-style: solid;
+ border-color: gray;
+ color:azure;
 
 }

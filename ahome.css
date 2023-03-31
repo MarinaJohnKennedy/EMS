@@ -1,38 +1,67 @@
-li a {
-    
-    display: block;
+  li a 
+  {
+    color: azure;
     font-family: cursive;
     backdrop-filter: blur(10px);
-    color: black;
     text-decoration: none;
-    
   }
-  li{
+  li
+  {
     border: 1px;
   }
-  ul {
+  ul
+  {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
-
-    position: absolute;
-    top: 20%;
-        
+    padding-inline-start: 0px;
+    font-size: 24px;
   }
-  body{
+  body
+  {
     background-image: url("e.jpg");
     background-size: cover;
-}
-fieldset
-{
-    position: absolute;
-    left: 42%;
-  align-items: center;
-    width: 200px;
-    height: 588px;
+  }
+  fieldset
+  {
+    top: 50%;
+    transform: translate(-0%, -50%);
     text-align: center;
     border-radius: 8px;
-   
+    margin-left: auto;
+    margin-right: auto;
+    border-style:solid;
+    border-color: gray;
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    text-align: center;
+    border-radius: 8px;
     font-family: cursive;
+    
     backdrop-filter: blur(10px);
+   }
+   .salutation
+   {
+    font-size: 22px;
+    color: azure;
+    font-family: cursive;
+    top:20px;
+    left:1050px;
+   position: absolute;
+    margin-right:30px;
+
+   }
+   .home{
+        top:20px;
+    left:1125px;
+    font-family: cursive;
+    width:90px;
+    border-radius: 6px;
+    backdrop-filter: blur(10px);
+    font-size: 16px;
+    background: transparent;
+    padding: 3px;
+    margin-left:20px;
+    border-style: solid;
+   border-color: gray;
+   color:azure;
 }
