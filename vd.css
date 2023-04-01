@@ -28,25 +28,46 @@ fieldset
 }
 .home{
     position: relative;
-    top:20px;
-    left:1125px;
+    top:11px;
+  right: -79%;
     font-family: cursive;
-    width:90px;
+ 
+    width:fit-content;
     border-radius: 6px;
     backdrop-filter: blur(10px);
     font-size: 16px;
     background: transparent;
     padding: 3px;
-    margin-right:20px;
+    margin-right:10px;
     border-style: solid;
    border-color: gray;
    color:azure;
 }
+.home1
+{
+    position: relative;
+    top:11px;
+right: -77.5%;
+    font-family: cursive;
+ 
+    width:fit-content;
+    border-radius: 6px;
+    backdrop-filter: blur(10px);
+    font-size: 16px;
+    background: transparent;
+    padding: 3px;
+    margin-right:10px;
+    border-style: solid;
+   border-color: gray;
+   color:azure;
+
+}
+
 
 .update{
     position: relative;
     font-family: cursive;
-    width:90px;
+    width:fit-content;
     border-radius: 6px;
     backdrop-filter: blur(10px);
     font-size: 16px;
@@ -56,4 +77,21 @@ fieldset
     border-color: gray;
     color:azure;
     
+}
+.tb{
+    color: gray;
+    font-family: cursive;
+    border-radius: 6px;
+    padding: 10px;
+   
+   overflow: visible;
+    height: 30px;
+    border: solid 0.5px;
+    margin-top: 13px;
+    margin-bottom: 10px;
+    border-color: rgb(214, 213, 213);
+    text-align: center;
+    border-color: gray;
+    border-style: solid;
+    font-size: 16px;
 }

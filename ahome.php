@@ -33,13 +33,14 @@ $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 </head>
     <body>
 
-    <div class="salutation" >Hi <?php echo $_SESSION['firstname'].' '.$_SESSION['lastname']?>
-    <a href="login.php"><input type="button" name="logout" value="Logout" class="home"></a>
+    <div>
+    <a href="login.php"><input type="button" name="logout" value="Logout" class="logout"></a>
   </div>
 <fieldset>
 <h1>
+Hi <?php echo $_SESSION['firstname'].' '.$_SESSION['lastname']?>
 <ul>
-  <li><a href="viewdetails.php">My Account</a></li><br>
+  <li><a href="viewdetails.php">My Account Details</a></li><br>
   <li><a href="addemp.php">Create Employee</a></li><br>
   <li><a href="editemp.php">Edit Employee</a></li><br>
   <li><a href="delemp.php">Delete Employee</a></li><br>

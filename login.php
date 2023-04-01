@@ -37,6 +37,8 @@ if(filter_has_var(INPUT_POST,'submit'))
             {                
                 $_SESSION['usertype']=$row['ut'];
                 $utype=$_SESSION['usertype'];
+                $_SESSION['ids']=$row['id'];
+                $idss=$_SESSION['ids'];
                 
                 if($utype=="Admin")
                 {

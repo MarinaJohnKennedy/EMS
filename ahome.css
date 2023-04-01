@@ -4,6 +4,11 @@
     font-family: cursive;
     backdrop-filter: blur(10px);
     text-decoration: none;
+    border-style: solid;
+    border-color: gray;
+    border-radius: 6px;
+    padding:3px;
+    
   }
   li
   {
@@ -22,6 +27,7 @@
   }
   fieldset
   {
+    color:azure;
     top: 50%;
     transform: translate(-0%, -50%);
     text-align: center;
@@ -36,32 +42,33 @@
     text-align: center;
     border-radius: 8px;
     font-family: cursive;
-    
+    font-size: 14px;
     backdrop-filter: blur(10px);
    }
    .salutation
    {
-    font-size: 22px;
-    color: azure;
-    font-family: cursive;
+    position: absolute;
+   
     top:20px;
-    left:1050px;
-   position: absolute;
-    margin-right:30px;
-
-   }
-   .home{
-        top:20px;
-    left:1125px;
     font-family: cursive;
-    width:90px;
-    border-radius: 6px;
-    backdrop-filter: blur(10px);
-    font-size: 16px;
-    background: transparent;
-    padding: 3px;
-    margin-left:20px;
-    border-style: solid;
+    font-size: 22px;
+    color:azure;
+    margin-right: 18px;
+   }
+   .logout
+   {
+   top:20px;
+   position: absolute;
+   right: 20px;
+ margin-right: 2px;
+   font-family: cursive;
+   width:90px;
+   border-radius: 6px;
+   backdrop-filter: blur(10px);
+   font-size: 16px;
+   background: transparent;
+   padding: 3px;
+   border-style: solid;
    border-color: gray;
    color:azure;
 }
