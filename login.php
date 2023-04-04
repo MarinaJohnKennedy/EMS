@@ -44,7 +44,7 @@ if(filter_has_var(INPUT_POST,'submit'))
                 {
                 
                 header("Location:ahome.php");
-            
+           
                 }
                 else if($utype=="Employee")
                 {

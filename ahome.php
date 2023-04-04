@@ -40,8 +40,9 @@ $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 <h1>
 Hi <?php echo $_SESSION['firstname'].' '.$_SESSION['lastname']?>
 <ul>
-  <li><a href="viewdetails.php">My Account Details</a></li><br>
+  <li><a href="aviewdetails.php">My Account Details</a></li><br>
   <li><a href="addemp.php">Create Employee</a></li><br>
+  <li><a href="viewemp.php">View Employees</a></li><br>
   <li><a href="editemp.php">Edit Employee</a></li><br>
   <li><a href="delemp.php">Delete Employee</a></li><br>
   <li><a href="import.php">Import New Employees</a></li><br>

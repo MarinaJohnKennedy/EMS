@@ -1,21 +1,29 @@
 body{
     background-image: url("e.jpg");
     background-size: cover;
+height: 634px;
 }
 fieldset
 {
+    color: azure;
     border-color: gray;
     position: absolute;
-    top: 50%;
+    top: 10%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    height:fit-content;
+    transform: translate(-50%, -9%);
     text-align: center;
     border-radius: 8px;
-    width:200px;
+    width:fit-content;
+
     font-family: cursive;
     backdrop-filter: blur(10px);
-  
+   padding-bottom: 0px;
+   margin-bottom: 10px;
 }
+
+    
+
 h1{color: azure;
     font-size: 20px;
 }
@@ -36,7 +44,7 @@ h1{color: azure;
     height: 30px;
     border: solid 0.5px;
     margin-top: 13px;
-    margin-bottom: 10px;
+  
     border-color: rgb(214, 213, 213);
     text-align: center;
     border-color: gray;
@@ -45,6 +53,9 @@ h1{color: azure;
 }
 
 .sub{
+    margin-top: 10px;
+ 
+    position: relative;
 font-family: cursive;
 border-radius: 6px;
 border-color: gray;
@@ -63,7 +74,7 @@ border-style: solid;
 .home1{
     position: relative;
     top:11px;
-  right: -77.5%;
+  right: -90%;
     font-family: cursive;
  
     width:fit-content;
@@ -72,7 +83,7 @@ border-style: solid;
     font-size: 16px;
     background: transparent;
     padding: 3px;
-    margin-right:10px;
+    
     border-style: solid;
    border-color: gray;
    color:azure;

@@ -1,6 +1,19 @@
 <?php
 require("db.php");
 session_start();
+$utype=$_SESSION['usertype'];
+if(isset($_POST['home']))
+{
+                     if($utype=="Admin")
+                    {
+                    header("Location:ahome.php");
+                   
+                    }
+                    else if($utype=="Employee")
+                    {
+                        header("Location:ehome.php");
+                    }
+                }
 $idss=$_SESSION['ids'];
 $msg='';
 $query="select * from employees where id='$idss'";
@@ -35,7 +48,7 @@ $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
     <body>
         
     <a href="ahome.php"><input type="button" name="home" value="Home" class="home"></a>
-    <a href="changepassword.php"><input type="button" name="home" value="Change Password" class="home"></a>
+    <a href="changepassword.php"><input type="button" name="changepassword" value="Change Password" class="home"></a>
     <a href="login.php"><input type="button" name="logout" value="Logout" class="home"></a>
     
     <fieldset>
@@ -63,7 +76,7 @@ $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
     
 </div>
 <br>
-<a href="edit.php"><input type="button" name="update" value="Update Account Details" class="update"></a>
+<a href="aedit.php"><input type="button" name="update" value="Update Account Details" class="update"></a>
 </fieldset>
 
 

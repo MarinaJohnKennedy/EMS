@@ -95,7 +95,7 @@ if(filter_has_var(INPUT_POST,'submit'))
 
 </head>
 <body>
-<a href="ehome.php"><input type="button" name="home" value="Home" class="home1"></a>
+<a href="ahome.php"><input type="button" name="home" value="Home" class="home1"></a>
 
     <a href="login.php"><input type="button" name="logout" value="Logout" class="home1"></a>
 

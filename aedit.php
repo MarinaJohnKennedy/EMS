@@ -89,7 +89,8 @@ if(isset($_POST['update']))
 
 </head>
     <body>
-    <a href="ehome.php"><input type="button" name="home" value="Home" class="home1"></a>
+    <a href="ahome.php"><input type="button" name="home" value="Home" class="home1"></a>
+    <a href="aviewdetails.php"><input type="button" name="myacc" value="My Account details" class="home1"></a>
     <a href="login.php"><input type="button" name="logout" value="Logout" class="home1"></a>
 <fieldset>
 <?php if($msg!=''): ?>
