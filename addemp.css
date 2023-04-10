@@ -1,11 +1,10 @@
 body{
-    background-image: url("e.jpg");
-    background-size: cover;
+   
 height: 634px;
 }
 fieldset
 {
-    color: azure;
+    color: black;
     border-color: gray;
     position: absolute;
     top: 10%;
@@ -16,7 +15,7 @@ fieldset
     border-radius: 8px;
     width:fit-content;
 
-    font-family: cursive;
+    font-family: 'Times New Roman', Times, serif;
     backdrop-filter: blur(10px);
    padding-bottom: 0px;
    margin-bottom: 10px;
@@ -24,7 +23,7 @@ fieldset
 
     
 
-h1{color: azure;
+h1{color: black;
     font-size: 20px;
 }
 .alert
@@ -32,12 +31,12 @@ h1{color: azure;
     position: relative;
     text-align: center;
     top: 43%;
-    color: white;
+    color: black;
     
 }
 .tb{
-    color: gray;
-    font-family: cursive;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
     border-radius: 6px;
     padding: 10px;
     width: 225px;
@@ -45,7 +44,7 @@ h1{color: azure;
     border: solid 0.5px;
     margin-top: 13px;
   
-    border-color: rgb(214, 213, 213);
+  
     text-align: center;
     border-color: gray;
     border-style: solid;
@@ -56,7 +55,7 @@ h1{color: azure;
     margin-top: 10px;
  
     position: relative;
-font-family: cursive;
+font-family: 'Times New Roman', Times, serif;
 border-radius: 6px;
 border-color: gray;
 border-style: solid;
@@ -68,14 +67,14 @@ font-weight: 100;
 padding: 3px;
 border-style: solid;
  border-color: gray;
- color:azure;
+ color:black;
 
 }
 .home1{
     position: relative;
     top:11px;
   right: -90%;
-    font-family: cursive;
+    font-family: 'Times New Roman', Times, serif;
  
     width:fit-content;
     border-radius: 6px;
@@ -86,5 +85,5 @@ border-style: solid;
     
     border-style: solid;
    border-color: gray;
-   color:azure;
+   color:black;
 }

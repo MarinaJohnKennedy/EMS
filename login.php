@@ -49,7 +49,7 @@ if(filter_has_var(INPUT_POST,'submit'))
                 else if($utype=="Employee")
                 {
                     
-                    header("Location:ehome.php");
+                    header("Location:edit.php");
                 }
                 
             }

@@ -89,13 +89,13 @@ if(filter_has_var(INPUT_POST,'submit'))
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Login</title>
+    <title>Change Password</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="login.css">
 
 </head>
 <body>
-<a href="ehome.php"><input type="button" name="home" value="Home" class="home1"></a>
+<a href="edit.php"><input type="button" name="home" value="Home" class="home1"></a>
 
     <a href="login.php"><input type="button" name="logout" value="Logout" class="home1"></a>
 

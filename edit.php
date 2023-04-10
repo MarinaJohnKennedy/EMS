@@ -83,15 +83,17 @@ if(isset($_POST['update']))
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title> My Account Details</title>
+    <title> Update Account Details</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="vd.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="login.css">
 
 </head>
     <body>
-    <a href="ehome.php"><input type="button" name="home" value="Home" class="home1"></a>
+    <a href="changepassword.php"><input type="button" name="home" value="Change Password" class="home1"></a>
+ 
     <a href="login.php"><input type="button" name="logout" value="Logout" class="home1"></a>
-<fieldset>
+<fieldset class=fd>
+    <br>
 <?php if($msg!=''): ?>
 <div class="alert"> <?php echo $msg;?> </div><?php endif; ?>
     
@@ -99,7 +101,7 @@ if(isset($_POST['update']))
     <div>
     <?php
 
-$query="select fname,lname,gender,mobilenumber,emailid,dob,addr from employees where id='$idss'";
+$query="select fname,lname,gender,mobilenumber,emailid,dob,addr,role,sal,design from employees where id='$idss'";
 $result=mysqli_query($conn, $query);
 $count = mysqli_num_rows($result);
 $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
@@ -114,9 +116,13 @@ echo "Gender: <input type=text class=tb name=gender value=".$row['gender']."><br
 echo "Mobile Number:<input type=text class=tb name=mobilenumber value=".$row['mobilenumber']."><br>";
 echo "Email ID:<input type=text class=tb name=emailid value=".$row['emailid']."><br>";
 echo "Date of Birth: <input type=date class=tb name=dob value=".$row['dob']."><br>";
-echo "Address: <input type=text class=tb name=addr value='".$row['addr']."'><br><br>";
+echo "Address: <input type=text class=tb name=addr value='".$row['addr']."'><br>";
 
-echo "<input type=submit class=update name=update value=Update>";
+echo "<div class=data>Role:".$row['role']."<br>";
+echo "Salary:".$row['sal']."<br>";
+echo "Designation:".$row['design']."</div><br>";
+
+echo "<input type=submit class=sub name=update value=Update>";
 
 echo "</form>";
 }?>

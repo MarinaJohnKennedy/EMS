@@ -1,6 +1,7 @@
 <?php
 require("db.php");
 session_start();
+
 $idss=$_SESSION['ids'];
 $utype=$_SESSION['usertype'];
 $email=$_SESSION['emailid'];
@@ -63,6 +64,7 @@ if(isset($_POST['update']))
             echo $e->getMessage();
         }
     }}}}
+
     if(isset($_POST['home']))
 {
                      if($utype=="Admin")
@@ -83,30 +85,31 @@ if(isset($_POST['update']))
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title> My Account Details</title>
+    <title> Update Account Details</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="vd.css">
 
 </head>
     <body>
     <a href="ahome.php"><input type="button" name="home" value="Home" class="home1"></a>
-    <a href="aviewdetails.php"><input type="button" name="myacc" value="My Account details" class="home1"></a>
+    
     <a href="login.php"><input type="button" name="logout" value="Logout" class="home1"></a>
 <fieldset>
-<?php if($msg!=''): ?>
+    <br>
+<?php  if($msg!=''): ?>
 <div class="alert"> <?php echo $msg;?> </div><?php endif; ?>
     
     <h1>Update Account Details</h1>
     <div>
     <?php
 
-$query="select fname,lname,gender,mobilenumber,emailid,dob,addr from employees where id='$idss'";
+$query="select fname,lname,gender,mobilenumber,emailid,dob,addr,role,sal,design from employees where id='$idss'";
 $result=mysqli_query($conn, $query);
 $count = mysqli_num_rows($result);
 $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 if($count==1)
 {
-echo "<form action=edit.php method=post>";
+echo "<form action=aedit.php method=post class=forma>";
 
 
 echo "First Name: <input type=text class=tb name=firstname value=".$row['fname']."><br>";
@@ -115,8 +118,10 @@ echo "Gender: <input type=text class=tb name=gender value=".$row['gender']."><br
 echo "Mobile Number:<input type=text class=tb name=mobilenumber value=".$row['mobilenumber']."><br>";
 echo "Email ID:<input type=text class=tb name=emailid value=".$row['emailid']."><br>";
 echo "Date of Birth: <input type=date class=tb name=dob value=".$row['dob']."><br>";
-echo "Address: <input type=text class=tb name=addr value='".$row['addr']."'><br><br>";
-
+echo "Address: <input type=text class=tb name=addr value='".$row['addr']."'><br>";
+echo "Role: ".$row['role']."<br>";
+echo "Salary: ".$row['sal']."<br>";
+echo "Designation: ".$row['design']."<br><br>";
 echo "<input type=submit class=update name=update value=Update>";
 
 echo "</form>";

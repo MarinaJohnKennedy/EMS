@@ -1,6 +1,5 @@
 body{
-    background-image: url("e.jpg");
-    background-size: cover;
+   
 
 height: 632px;
 }
@@ -17,8 +16,8 @@ fieldset
     text-align: center;
     border-radius: 8px;
    padding-bottom: 0px;;
-    font-family: cursive;
-    color:azure;
+    font-family: 'Times New Roman', Times, serif;
+    color:black;
     backdrop-filter: blur(10px);
     width: fit-content;
     margin-left: auto;
@@ -37,7 +36,7 @@ fieldset
     position: relative;
     top:11px;
   right: -90%;
-    font-family: cursive;
+    font-family: 'Times New Roman', Times, serif;
  
     width:fit-content;
     border-radius: 6px;
@@ -55,7 +54,7 @@ fieldset
     position: relative;
     top:11px;
     right: -90%;
-    font-family: cursive;
+    font-family: 'Times New Roman', Times, serif;
  
     width:fit-content;
     border-radius: 6px;
@@ -66,14 +65,14 @@ fieldset
     margin-right:10px;
     border-style: solid;
    border-color: gray;
-   color:azure;
+   color:black;
 
 }
 
 
 .update{
     position: relative;
-    font-family: cursive;
+    font-family: 'Times New Roman', Times, serif;
     width:fit-content;
     border-radius: 6px;
     backdrop-filter: blur(10px);
@@ -82,12 +81,12 @@ fieldset
     padding: 3px;
     border-style: solid;
     border-color: gray;
-    color:azure;
+    color:black;
     
 }
 .tb{
     color: gray;
-    font-family: cursive;
+    font-family: 'Times New Roman', Times, serif;
     border-radius: 6px;
     padding: 5px;
    

@@ -1,7 +1,5 @@
 body{
-    background-image: url("e.jpg");
-    background-size: cover;
-height: fit-content;
+   overflow: hidden;
 }
 h1{
     margin-block-start:3px;
@@ -16,18 +14,16 @@ fieldset
     text-align: center;
     border-radius: 8px;
    
-    font-family: cursive;
-    color:azure;
-    backdrop-filter: blur(10px);
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-    vertical-align: middle;
-    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    color:black;
+   
+height: auto;
+width: fit-content;
+ padding-left: 1px;
+ padding-right: 1px;
     position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 20%;
+   
 }
 .data{
     font-size: 24px;
@@ -35,8 +31,8 @@ fieldset
 .home{
     position: relative;
     top:11px;
-  right: -90%;
-    font-family: cursive;
+  right: -80%;
+    font-family: 'Times New Roman', Times, serif;
  
     width:fit-content;
     border-radius: 6px;
@@ -47,14 +43,31 @@ fieldset
     margin-right:10px;
     border-style: solid;
    border-color: gray;
-   color:azure;
+   color:black;
 }
 .home1
 {
     position: relative;
     top:11px;
-    right: -90%;
-    font-family: cursive;
+    right: -45%;
+    font-family: 'Times New Roman', Times, serif;
+ width: fit-content;
+    border-radius: 6px;
+    backdrop-filter: blur(10px);
+    font-size: 16px;
+    background: transparent;
+    padding: 3px;
+    margin-right:10px;
+    border-style: solid;
+   border-color: gray;
+   color:black;
+
+}
+
+.download{
+    position: relative;
+    
+    font-family: 'Times New Roman', Times, serif;
  
     width:fit-content;
     border-radius: 6px;
@@ -65,14 +78,11 @@ fieldset
     margin-right:10px;
     border-style: solid;
    border-color: gray;
-   color:azure;
-
+   color:black;
 }
-
-
 .update{
     position: relative;
-    font-family: cursive;
+    font-family: 'Times New Roman', Times, serif;
     width:fit-content;
     border-radius: 6px;
     backdrop-filter: blur(10px);
@@ -81,33 +91,58 @@ fieldset
     padding: 3px;
     border-style: solid;
     border-color: gray;
-    color:azure;
+    color:black;
     
 }
 .tb{
-    color: gray;
-    font-family: cursive;
-    border-radius: 6px;
-    padding: 5px;
+    color:black;
+    font-family: 'Times New Roman', Times, serif;
+text-align: center;
+    border:none;
+    font-size: 14px;
+    height: 23px;
+}
+
+table{
+  
+    border: none;
+    
+    
+    
+}
+
+input{
+    padding: 0px;width:84px;
+    margin: 0;
+}
+.sub{
    
-   overflow: visible;
-    height: 30px;
-    border: solid 0.5px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    border-color: rgb(214, 213, 213);
-    text-align: center;
-    border-color: gray;
-    border-style: solid;
-    font-size: 16px;
-}
-form{
-    margin-block-end: 0em;
-}
-table,th,td{
-    border: 1px;
+    
+    font-family: 'Times New Roman', Times, serif;
+ width: fit-content;
     border-radius: 6px;
-    border-color: azure;
+    font-size: 16px;
+    background: transparent;
+    padding: 3px;
+   
     border-style: solid;
-    padding:4px;
+   border-color: gray;
+   color:black;
+}
+.id{
+    width: 30px;
+    border: none;
+text-align: center;
+height: 23px;
+}
+.emailid{
+width: 172px;
+border: none;
+text-align: center;
+height: 23px;
+}
+
+.addr{
+    height: 23px;
+border: none;
 }
