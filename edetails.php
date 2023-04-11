@@ -78,6 +78,29 @@ if(isset($_POST['update']))
                     }
                 }
 
+                if(isset($_POST['delete']))
+                {
+                   
+                    if(filter_has_var(INPUT_POST,'delete'))
+                    {
+                       
+                            $query="delete from employees where id='$idss'";
+                
+                            $result=mysqli_query($conn, $query);
+                
+                            if($result)
+                            {
+                            $msg="Deleted Employee Successfully ";
+                           
+                            }
+                            else
+                            {
+                            $msg="Not Deleted";
+                            }
+                
+                    
+                    }
+                }
 
 
 ?>
@@ -100,7 +123,7 @@ if(isset($_POST['update']))
 <?php  if($msg!=''): ?>
 <div class="alert"> <?php echo $msg;?> </div><?php endif; ?>
     
-    <h1>My Account Details</h1>
+    <h1>Employee Account Details</h1>
     <div class=data>
     <?php
 
@@ -111,20 +134,21 @@ $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 if($count==1)
 {
     echo "<form>";
-
+    $ndob=date("d-m-Y",strtotime($row['dob']));
 echo "Employee ID: ".$row['id']."<br>";
 echo "First Name: ".$row['fname']."<br>";
 echo "Last Name: ".$row['lname']."<br>";
 echo "Gender: ".$row['gender']."<br>";
 echo "Mobile Number:".$row['mobilenumber']."<br>";
 echo "Email ID: ".$row['emailid']."<br>";
-echo "Date of Birth: ".$row['dob']."<br>";
+echo "Date of Birth: ".$ndob."<br>";
 echo "Address: ".$row['addr']."<br>";
 echo "Role: ".$row['role']."<br>";
 echo "Salary: ".$row['sal']."<br>";
 echo "Designation: ".$row['design']."<br><br>";
-echo "<a href=update.php><input type=button name=update value='Update Account Details' class=update></a>";
 
+echo "<a href=update.php><input type=button name=update value='Update Employee Details' class=update></a>&nbsp&nbsp";
+echo "<a href=viewemp.php><input type=button name=delete value='Delete Employee' class=update></a>";
 echo "</form>";
 }?>
 </div>

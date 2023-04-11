@@ -8,7 +8,7 @@ $query="select * from employees where emailid='$email' and password='$pass'";
 $result=mysqli_query($conn, $query);
 
 $count = mysqli_num_rows($result);
-$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+$row = mysqli_fetch_array($result,MYSQLI_ASSOC); 
     if($count==1)
     {
        

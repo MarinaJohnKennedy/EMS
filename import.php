@@ -63,7 +63,7 @@ $msg="Imported Failed";
 
 ?>
     <div>
-    <a href="ahome.php"><input type="button" name="home" value="Home" class="home1"></a>
+    <a href="ahome.php"><input type="button" name="home" value="Home" class="home"></a>
     <a href="index.php"><input type="button" name="logout" value="Logout" class="logout"></a>
   </div>
 <fieldset>

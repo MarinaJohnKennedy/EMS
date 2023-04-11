@@ -1,5 +1,5 @@
 .forma{
-    font-size: 20px;;
+    font-size: 24px;;
 }
 fieldset
 {
@@ -41,6 +41,14 @@ fieldset
     border-style: solid;
    border-color: gray;
    color:black;
+}
+.alert
+{
+    position: relative;
+    text-align: center;
+    top: 43%;
+    color: black;
+    
 }
 .home1
 {

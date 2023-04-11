@@ -1,3 +1,5 @@
+
+
 <?php
 require("db.php");
 session_start();
@@ -49,7 +51,7 @@ if(filter_has_var(INPUT_POST,'submit'))
                 else if($utype=="Employee")
                 {
                     
-                    header("Location:edit.php");
+                    header("Location:eedit.php");
                 }
                 
             }
@@ -68,8 +70,6 @@ if(filter_has_var(INPUT_POST,'submit'))
 
 }
 ?>
-
-
 <html>
 <head>
     <meta charset="utf-8">

@@ -129,18 +129,7 @@ input{
    border-color: gray;
    color:black;
 }
-.id{
-    width: 30px;
-    border: none;
-text-align: center;
-height: 23px;
-}
-.emailid{
-width: 172px;
-border: none;
-text-align: center;
-height: 23px;
-}
+
 
 .addr{
     height: 23px;

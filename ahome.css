@@ -100,21 +100,7 @@
    border-color: gray;
    color:black;
 }
-.importfile
-{
- 
-   position: relative; 
-   font-family: 'Times New Roman', Times, serif;
-   width:500px;
-   border-radius: 6px;
-   backdrop-filter: blur(10px);
-   font-size: 16px;
-   background: transparent;
-   padding: 3px;
-   border-style: solid;
-   border-color: gray;
-   color:black;
-}
+
 .alert
 {
     position: relative;
@@ -128,7 +114,7 @@
 .home1{
   position: relative;
   top:11px;
-right: -87%;
+right: -53%;
   font-family: 'Times New Roman', Times, serif;
 
   width:fit-content;
@@ -141,6 +127,25 @@ right: -87%;
   border-style: solid;
  border-color: gray;
  color:black;
+}
+.home{
+  
+    position: relative;
+    top:11px;
+  right: -88%;
+    font-family: 'Times New Roman', Times, serif;
+  
+    width:fit-content;
+    border-radius: 6px;
+    backdrop-filter: blur(10px);
+    font-size: 16px;
+    background: transparent;
+    padding: 3px;
+    margin-right:10px;
+    border-style: solid;
+   border-color: gray;
+   color:black;
+  
 }
 form{
 
@@ -164,4 +169,23 @@ form{
   border-color: gray;
   border-style: solid;
   font-size: 16px;
+}
+.id{
+  width: 25px;
+  border: none;
+text-align: center;
+height: 23px;
+}
+.name{
+  width: 100px;
+  border: none;
+text-align: center;
+height: 23px;
+}
+
+.emailid{
+width: 172px;
+border: none;
+text-align: center;
+height: 23px;
 }
