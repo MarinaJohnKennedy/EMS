@@ -91,7 +91,7 @@ if(isset($_POST['update']))
     <body>
     <a href="changepassword.php"><input type="button" name="home" value="Change Password" class="home1"></a>
  
-    <a href="login.php"><input type="button" name="logout" value="Logout" class="home1"></a>
+    <a href="index.php"><input type="button" name="logout" value="Logout" class="home1"></a>
 <fieldset class=fd>
     <br>
 <?php if($msg!=''): ?>

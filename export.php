@@ -19,7 +19,7 @@ $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 
     <div>
     <a href="ahome.php"><input type="button" name="home" value="Home" class="home1"></a>
-    <a href="login.php"><input type="button" name="logout" value="Logout" class="home1"></a>
+    <a href="index.php"><input type="button" name="logout" value="Logout" class="home1"></a>
   </div>
 <fieldset>
 

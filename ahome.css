@@ -51,6 +51,21 @@
    
     margin-right: 18px;
    }
+   .sub{
+    position: relative;
+ 
+ 
+   font-family: 'Times New Roman', Times, serif;
+   width:140px;
+   border-radius: 6px;
+   backdrop-filter: blur(10px);
+   font-size: 16px;
+   background: transparent;
+   padding: 3px;
+   border-style: solid;
+   border-color: gray;
+   color:black;
+   }
    .logout
    {
    top:20px;

@@ -1,15 +1,13 @@
 <?php
+
+use Fpdf\Fpdf;
+
 require("db.php");
 $msg="";
 
-if(isset($_POST['exportbio']))
-{
-    
-}
-
 if(isset($_POST['update']))
 {
-   
+    $idss=$_POST['id'];
     $first=$_POST['firstname'];
     $last=$_POST['lastname'];
     $gender=$_POST['gender'];
@@ -21,7 +19,7 @@ if(isset($_POST['update']))
     $role=$_POST['role'];
     $sal=$_POST['sal'];
     $design=$_POST['design'];
-    $idss=$_POST['id'];
+   
 
 
     if(filter_has_var(INPUT_POST,'update'))
@@ -112,7 +110,7 @@ if(isset($_POST['delete']))
     <a href="import.php"><input type="button" name="importne" value="Import New Employees" class="home1"></a>
     <a href="export.php"><input type="button" name="eee" value="Export Existing Employees" class="home1"></a>
     
-    <a href="login.php"><input type="button" name="logout" value="Logout" class="home1"></a>
+    <a href="index.php"><input type="button" name="logout" value="Logout" class="home1"></a>
   </div>
 <fieldset>
 <br>

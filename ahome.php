@@ -34,7 +34,7 @@ $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
     <body>
 
     <div>
-    <a href="login.php"><input type="button" name="logout" value="Logout" class="logout"></a>
+    <a href="index.php"><input type="button" name="logout" value="Logout" class="logout"></a>
   </div>
 <fieldset>
 <h1>
