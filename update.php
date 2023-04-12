@@ -3,14 +3,22 @@
 require("db.php");
 session_start();
 
-$idss=$_SESSION['ids'];
 $utype=$_SESSION['usertype'];
-$email=$_SESSION['emailid'];
-$msg='';
 
-                
+$msg='';
+$idss="";
+
+if(isset($_GET['id']))
+    {
+        $idss=mysqli_real_escape_string($conn,$_GET['id']);
+        $query="select id,fname,lname,gender,mobilenumber,emailid,dob,addr,role,sal,design from employees where id='".$_GET['id']."'";
+        $result=mysqli_query($conn, $query);
+        $emps=mysqli_fetch_all($result,MYSQLI_ASSOC);
+        mysqli_free_result($result);
+    }
 if(isset($_POST['update']))
 {
+   
     $first=$_POST['firstname'];
     $last=$_POST['lastname'];
     $gender=$_POST['gender'];
@@ -45,14 +53,16 @@ if(isset($_POST['update']))
         
         else{
             try{
-
-            $query="update employees set fname='$first',lname='$last',gender='$gender',mobilenumber='$mobile',emailid='$email',dob='$dob',addr='$addr' where id='$idss'";
+            
+            $query="update employees set fname='$first',lname='$last',gender='$gender',mobilenumber='$mobile',emailid='$email',dob='$dob',addr='$addr' where id='".$_GET['id']."'";
 
             $result=mysqli_query($conn, $query);
 
             if($result)
             {
+            header("Location:edetails.php?id=".$_GET['id']);
             $msg="Updated account details";
+            
             }
             else
             {
@@ -65,6 +75,10 @@ if(isset($_POST['update']))
             echo $e->getMessage();
         }
     }}}}
+
+    
+
+
 
     if(isset($_POST['home']))
 {
@@ -92,9 +106,10 @@ if(isset($_POST['update']))
 
 </head>
     <body>
-    <a href="ahome.php"><input type="button" name="home" value="Home" class="home1"></a>
-    
-    <a href="index.php"><input type="button" name="logout" value="Logout" class="home1"></a>
+    <a href="ahome.php"><input type="button" name="home" value="Home" class="home2"></a>
+    <a href="viewemp.php"><input type="button" name="home" value="Employees List" class="home2"></a>
+    <a href="edetails.php?id=<?php echo $_GET['id']?>"><input type="button" name="home" value="Employee Details" class="home2"></a>
+    <a href="index.php"><input type="button" name="logout" value="Logout" class="home2"></a>
 <fieldset>
     <br>
 <?php  if($msg!=''): ?>
@@ -102,29 +117,30 @@ if(isset($_POST['update']))
     
     <h1>Update Account Details</h1>
     <div>
-    <?php
-
-$query="select id,fname,lname,gender,mobilenumber,emailid,dob,addr,role,sal,design from employees where id='$idss'";
-$result=mysqli_query($conn, $query);
-$count = mysqli_num_rows($result);
-$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-if($count==1)
-{
-
-    echo "<form action=aedit.php method=post class=forma>";
+        <?php 
+  foreach($emps as $emp):
+if($emp):
   
-    echo "First Name: <input type=text class=tb name=firstname value=".$row['fname']."><br>";
-    echo "Last Name: <input type=text class=tb name=lastname value='".$row['lname']."'><br>";
-    echo "Gender: <input type=text class=tb name=gender value=".$row['gender']."><br>";
-    echo "Mobile Number:<input type=text class=tb name=mobilenumber value=".$row['mobilenumber']."><br>";
-    echo "Email ID:<input type=text class=tb name=emailid value=".$row['emailid']."><br>";
-    echo "Date of Birth: <input type=date class=tb name=dob value=".$row['dob']."><br>";
-    echo "Address: <input type=text class=tb name=addr value='".$row['addr']."'><br>";
+   ?>
+    <form  method=post >
+  <?php
+  echo "First Name: <input type=text class=tb name='firstname' value=".$emp['fname']."><br>";
+  echo "Last Name: <input type=text class=tb name='lastname' value='".$emp['lname']."'><br>";
+  echo "Gender: <input type=text class=tb name='gender' value=".$emp['gender']."><br>";
+  echo "Mobile Number: <input type=text class=tb name='mobilenumber' value=".$emp['mobilenumber']."><br>";
+  echo "Email ID: <input type=text class=tb name='emailid' value=".$emp['emailid']."><br>";
+  echo "Date of Birth: <input type=date class=tb name='dob' value=".$emp['dob']."><br>";
+  echo "Address: <input type=text class=tb name='addr' value='".$emp['addr']."'><br><br>";
+?>
+<a href="edetails.php?id=<?php echo $emp['id']?>"><input type=submit class=update name=update value=Update></a>
+    &nbsp&nbsp
 
-echo "<input type=submit class=update name=update value=Update>";
+<?php
 
+endif;
+endforeach;
 echo "</form>";
-}?>
+?>
 </div>
 </fieldset>
 </body>

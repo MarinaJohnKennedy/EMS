@@ -2,6 +2,12 @@
 session_start();
 require("db.php");
 $msg="";
+$query="select id,fname,lname,mobilenumber,emailid from employees where ut='Employee'";
+
+$result=mysqli_query($conn, $query);
+$emps=mysqli_fetch_all($result,MYSQLI_ASSOC);
+mysqli_free_result($result);
+
 
 
 ?>
@@ -22,59 +28,39 @@ $msg="";
     <a href="addemp.php"><input type="button" name="addemp" value="Add Employee" class="home1"></a>
     <a href="import.php"><input type="button" name="importne" value="Import New Employees" class="home1"></a>
     <a href="export.php"><input type="button" name="eee" value="Export Existing Employees" class="home1"></a>
-    
     <a href="index.php"><input type="button" name="logout" value="Logout" class="home1"></a>
-  </div>
-<fieldset>
-<br>
-<?php if($msg!=''): ?>
-<div class="alert"> <?php echo $msg;?> </div><?php endif; ?>
-<h1>Employees List</h1>
+    </div>
+    <fieldset>
+    <br>
+    <?php if($msg!=''): ?>
+    <div class="alert"> <?php echo $msg;?> </div><?php endif; ?>
+    <h1>Employees List</h1>
 
-<table>
-    <tr>
+    <table>
+        <tr>
         <th class=id>ID</th>
         <th class=name>First Name</th>
         <th>Last Name</th>
-       
         <th>Mobile Number</th>
         <th class=emailid>Email ID</th>
        
     </tr>
-    <?php
+    <?php foreach($emps as $emp): ?>
 
-$query="select id,fname,lname,gender,mobilenumber,emailid,password,dob,addr,role,sal,design from employees where ut='Employee'";
-$result=mysqli_query($conn, $query);
-if($result-> num_rows>0)
-{ 
-   
-    while($row=mysqli_fetch_assoc($result))
-    {
+        <form action=viewemp.php method=GET>
+        <tr>
+        <td class=id> <?php echo $emp['id']?> </td>
+        <td class=name><?php echo $emp['fname']?></td>
+        <td class=name><?php echo $emp['lname']?></td>
+        <td class=emailid><?php echo $emp['mobilenumber']?></td>
+        <td class=emailid><?php echo $emp['emailid']?></td>
        
-      
-        echo "<form action=viewemp.php method=post>";
-        echo "<tr>";  
-        echo "<td class=id>".$row['id']."</td>"; 
-        echo "<td class=name>".$row['fname']."</td>"; 
-        echo "<td class=name>".$row['lname']."</td>"; 
-        echo "<td class=emailid>".$row['mobilenumber']."</td>"; 
-        echo "<td class=emailid>".$row['emailid']."</td>"; 
-        echo "<td><a href=edetails.php><input type=button class=sub name=view value=View></a></td>";
-        echo "</tr>";
-      
-        echo "</form>";
-
-    }
-   
-echo "</table>";
-
-}
-else{
-    $msg="No Employees";
-}
-    ?>
-    
-
-</fieldset>
+        <td><a href="edetails.php?id=<?php echo $emp['id']?>"><input type=button class=sub name=view value=View></a></td>
+        </tr>
+        
+        </form>
+        <?php endforeach;?>
+    </table>
+    </fieldset>
 </body>
 </html>

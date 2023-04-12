@@ -1,97 +1,37 @@
 <?php
 require("db.php");
 session_start();
-
-$idss=$_SESSION['ids'];
-$utype=$_SESSION['usertype'];
-$email=$_SESSION['emailid'];
 $msg='';
+$idss="";
 
-                
-if(isset($_POST['update']))
-{
-    $first=$_POST['firstname'];
-    $last=$_POST['lastname'];
-    $gender=$_POST['gender'];
-    $mobile=$_POST['mobilenumber'];
-    $email=$_POST['emailid'];
-    $dob=$_POST['dob'];
-    $addr=$_POST['addr'];
 
-    if(filter_has_var(INPUT_POST,'update'))
+if(isset($_GET['id']))
     {
-        if(!empty($first) && !empty($last) && !empty($mobile))
-    {
+        $idss=mysqli_real_escape_string($conn,$_GET['id']);
+        $query="select id,fname,lname,gender,mobilenumber,emailid,dob,addr,role,sal,design from employees where id='$idss'";
+        $result=mysqli_query($conn, $query);
+        $emps=mysqli_fetch_all($result,MYSQLI_ASSOC);
+        mysqli_free_result($result);
         
-        if(!preg_match("/^[a-zA-Z ]*$/",$first))
-        {
-            $msg= "First Name is NOT valid";
-        }
-    
-        else if(!preg_match("/^[a-zA-Z ]*$/",$last))
-        {
-            $msg= "Last Name is NOT valid";
-        }
-    
-        else if(filter_var($mobile,FILTER_VALIDATE_INT) === false && !preg_match("/^\d{10}$/",$mobile) && strlen($mobile)>10 || strlen($mobile)<10 )
-        {
-            $msg= "Mobile Number is NOT valid";
-        }
-        else if(filter_var($email, FILTER_VALIDATE_EMAIL)=== false)
-            {
-                $msg="Please use a valid E-mail ID";
-            }
         
-        else{
-            try{
-
-            $query="update employees set fname='$first',lname='$last',gender='$gender',mobilenumber='$mobile',emailid='$email',dob='$dob',addr='$addr' where id='$idss'";
-
-            $result=mysqli_query($conn, $query);
-
-            if($result)
-            {
-            $msg="Updated account details";
-            }
-            else
-            {
-            $msg="Not updated";
-            }
-
-        }
-        catch(Exception $e)
-        {
-            echo $e->getMessage();
-        }
-    }}}}
-
-    if(isset($_POST['home']))
-{
-                     if($utype=="Admin")
-                    {
-                    header("Location:ahome.php");
-                   
-                    }
-                    else if($utype=="Employee")
-                    {
-                        header("Location:ehome.php");
-                    }
-                }
-
-                if(isset($_POST['delete']))
+            
+    }               
+    if(isset($_POST['delete']))
                 {
-                   
+                    
+
                     if(filter_has_var(INPUT_POST,'delete'))
                     {
                        
-                            $query="delete from employees where id='$idss'";
+                            $query="delete from employees where id='".$_GET['id']."'";
                 
                             $result=mysqli_query($conn, $query);
                 
                             if($result)
                             {
+                            
+                            header("Location:viewemp.php");
                             $msg="Deleted Employee Successfully ";
-                           
                             }
                             else
                             {
@@ -100,9 +40,19 @@ if(isset($_POST['update']))
                 
                     
                     }
-                }
-
-
+                } 
+            if(isset($_GET['home']))
+            {
+                                 if($utype=="Admin")
+                                {
+                                header("Location:ahome.php");
+                               
+                                }
+                                else if($utype=="Employee")
+                                {
+                                    header("Location:ehome.php");
+                                }
+                            }
 ?>
 <html>
 <head>
@@ -116,7 +66,7 @@ if(isset($_POST['update']))
     <body>
    
     <a href="ahome.php"><input type="button" name="home" value="Home" class="home1"></a>
-  
+    <a href="viewemp.php"><input type="button" name="home" value="Employees List" class="home1"></a>
     <a href="index.php"><input type="button" name="logout" value="Logout" class="home1"></a>
 <fieldset>
     <br>
@@ -125,32 +75,33 @@ if(isset($_POST['update']))
     
     <h1>Employee Account Details</h1>
     <div class=data>
-    <?php
+    <?php  
+    
+   foreach($emps as $emp): ?>
+    <?php if($emp):?>
 
-$query="select id,fname,lname,gender,mobilenumber,emailid,dob,addr,role,sal,design from employees where id='$idss'";
-$result=mysqli_query($conn, $query);
-$count = mysqli_num_rows($result);
-$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-if($count==1)
-{
-    echo "<form>";
-    $ndob=date("d-m-Y",strtotime($row['dob']));
-echo "Employee ID: ".$row['id']."<br>";
-echo "First Name: ".$row['fname']."<br>";
-echo "Last Name: ".$row['lname']."<br>";
-echo "Gender: ".$row['gender']."<br>";
-echo "Mobile Number:".$row['mobilenumber']."<br>";
-echo "Email ID: ".$row['emailid']."<br>";
-echo "Date of Birth: ".$ndob."<br>";
-echo "Address: ".$row['addr']."<br>";
-echo "Role: ".$row['role']."<br>";
-echo "Salary: ".$row['sal']."<br>";
-echo "Designation: ".$row['design']."<br><br>";
+    <form method=post >
+    <?php $ndob=date("d-m-Y",strtotime($emp['dob']));?>
+    Employee ID: <?php echo $emp['id']?><br>
+    First Name: <?php echo $emp['fname']?><br>
+    Last Name: <?php echo $emp['lname']?><br>
+    Gender: <?php echo $emp['gender']?><br>
+    Mobile Number:<?php echo $emp['mobilenumber']?><br>
+    Email ID: <?php echo $emp['emailid']?><br>
+    Date of Birth: <?php echo $ndob?><br>
+    Address: <?php echo $emp['addr']?><br>
+    Role: <?php echo $emp['role']?><br>
+    Salary: <?php echo $emp['sal']?><br>
+    Designation: <?php echo $emp['design']?><br><br>
 
-echo "<a href=update.php><input type=button name=update value='Update Employee Details' class=update></a>&nbsp&nbsp";
-echo "<a href=viewemp.php><input type=button name=delete value='Delete Employee' class=update></a>";
-echo "</form>";
-}?>
+<a href="update.php?id=<?php echo $emp['id']?>"><input type=button name=update value='Update Employee Details' class=update></a>&nbsp&nbsp
+<input type=submit name=delete value='Delete Employee' class=update>
+<?php 
+endif;
+endforeach;?>
+</form>
+
+
 </div>
 </fieldset>
 </body>
