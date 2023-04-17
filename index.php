@@ -98,11 +98,27 @@ if(filter_has_var(INPUT_POST,'submit'))
 
 <input type="text" placeholder="Email ID" name="emailid" class="tb">
 <br>
+<div class=inputbox> 
+<input type="password" placeholder="Password" name="password" id="password" class="tbp">
+<img src="eye-close.png" id="eyeicon">
+</div>
+<script>
+    let eyeicon= document.getElementById("eyeicon");
+    let password=document.getElementById("password");
 
-<input type="password" placeholder="Password" name="password" class="tb">
+    eyeicon.onclick =function(){
+        if(password.type == "password")
+        {
+            password.type="text";
+            eyeicon.src="eye-open.png";
+        }else{
+            password.type="password";
+            eyeicon.src="eye-close.png";
+        }
+    }
+</script>
 <br>
 
-<br>
 <input type="submit" class="sub" name="submit" value="Submit">
 
 </fieldset>

@@ -93,7 +93,7 @@ if(isset($_POST['update']))
     <body>
    
    
-  
+    <a href="updatedetails.php"><input type="button" name="udetails" value="Update Details" class="home1"></a>
     <a href="index.php"><input type="button" name="logout" value="Logout" class="home1"></a>
 <fieldset class=fda>
     <br>

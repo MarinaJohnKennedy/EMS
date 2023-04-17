@@ -115,8 +115,20 @@ if($count==1)
   
     echo "First Name: <input type=text class=tb name=firstname value=".$row['fname']."><br>";
     echo "Last Name: <input type=text class=tb name=lastname value='".$row['lname']."'><br>";
-    echo "Gender: <input type=text class=tb name=gender value=".$row['gender']."><br>";
-    echo "Mobile Number:<input type=text class=tb name=mobilenumber value=".$row['mobilenumber']."><br>";
+    ?>
+    Gender:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  <?php  if($row['gender']== 'Male') { ?>
+  
+  <input type="radio" name="gender" value="Male" checked> Male
+  <input type="radio" name="gender" value="Female" unchecked> Female
+  <?php  }
+  else if($row['gender']== 'Female')  { ?>
+      <input type="radio" name="gender" value="Male" unchecked> Male
+   <input type="radio" name="gender" value="Female" checked> Female
+  
+  <?php } 
+   
+    echo "<br>Mobile Number: <input type=text class=tb name=mobilenumber value=".$row['mobilenumber']."><br>";
     echo "Email ID:<input type=text class=tb name=emailid value=".$row['emailid']."><br>";
     echo "Date of Birth: <input type=date class=tb name=dob value=".$row['dob']."><br>";
     echo "Address: <input type=text class=tb name=addr value='".$row['addr']."'><br>";

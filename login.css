@@ -36,7 +36,7 @@ h1{color: azure;
     font-family: 'Times New Roman', Times, serif;
     border-radius: 6px;
     padding: 10px;
-    width: 225px;
+    width: 240px;
     height: 30px;
     border: solid 0.5px;
     margin-top: 13px;
@@ -109,4 +109,40 @@ border-style: solid;
 form{
     color: azure;
     font-size: 24px;
+}
+img{
+    width:15px;
+    height: 13px;
+    cursor: pointer;
+color: black;
+padding-right: 4px;
+}
+.inputbox{
+    padding: 10px 0px;
+    width: 100%;
+    align-items: center;
+display: flex;
+background-color: white;
+border-radius: 6px;
+    height: 12px;
+}
+
+.tbp{
+    color: gray;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 6px;
+    padding: 10px 20px;
+    width: 220px;
+    height: 30px;
+    border: solid 0px;
+    margin-top: 13px;
+    margin-bottom: 10px;
+    border-color: rgb(214, 213, 213);
+  text-align: center;
+    border-color: gray;
+    border-style: solid;
+    font-size: 20px;
+    outline:0;
+   
+   
 }

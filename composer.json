@@ -2,7 +2,8 @@
     "require": {
         "phpoffice/phpspreadsheet": "^1.28",
         "mpdf/mpdf": "^8.1",
-        "fpdf/fpdf": "^1.85"
+        "fpdf/fpdf": "^1.85",
+        "dompdf/dompdf": "^2.0"
     },
     "config": {
         "platform-check": false

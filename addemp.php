@@ -3,23 +3,40 @@ require("db.php");
 
 $msg='';
 if(isset($_POST['submit']))
-{
+{ 
+
+
+    $role = $_POST['role'];
+    switch ($role) {
+        case 0:
+        $role="Frontend Developer";
+                   break;
+        case 1:
+            $role="Backend Developer";
+            break;
+        case 2:
+            $role="Manager";
+            break;
+       case 3:
+       $role="Clerk";
+       break;
+       }
     $first=$_POST['first'];
     $last=$_POST['last'];
-    $gender=$_POST['gender'];
+   $gender=$_POST['gender'];
     $mobilenumber=$_POST['mobilenumber'];
     $emailid=$_POST['emailid'];
     $pass=$_POST['pass'];
     $cpass=$_POST['cpass'];
     $dob=$_POST['dob'];
     $addr=$_POST['addr'];
-    $role=$_POST['role'];
+  
     $sal=$_POST['sal'];
     $design=$_POST['design'];
 if(filter_has_var(INPUT_POST,'submit'))
 {
     
-    if(!empty($first) && !empty($last) && !empty($gender) && !empty($mobilenumber) && !empty($emailid) && !empty($pass)&& !empty($cpass) && !empty($dob) && !empty($addr) &&  !empty($role) && !empty($sal) && !empty($design))
+    if(!empty($first) && !empty($last) && !empty($mobilenumber) && !empty($emailid) && !empty($pass)&& !empty($cpass) && !empty($dob) && !empty($addr) &&  !empty($role) && !empty($sal) && !empty($design))
     { 
         if(!preg_match("/^[a-zA-Z ]*$/",$first))
         {
@@ -107,8 +124,13 @@ else
 First Name:<input type="text" placeholder="" name="first" class="tb">
 <br>
 Last Name:<input type="text" placeholder="" name="last" class="tb">
-<br>
-Gender:<input type="text" placeholder="" name="gender" class="tb">
+<br><br>
+Gender:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<input type="radio" name="gender"  value="Male" >
+<label for="Male">Male</label>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<input type="radio" name="gender" value="Female" >
+<label for="Female">Female</label>
 <br>
 Mobile Number:<input type="text" placeholder="" name="mobilenumber" class="tb">
 <br>
@@ -123,8 +145,13 @@ Confirm Password:<input type="password" placeholder="" name="cpass" class="tb">
 Date of Birth: <input type="date" class="tb" name="dob" class="tb">
 <br>
 Address:<input type="text" placeholder="" name="addr" class="tb">
-<br>
-Role:<input type="text" placeholder="" name="role" class="tb">
+<br><br>
+Role: <select name="role" class="">
+    <option value="0">Frontend Developer</option>
+    <option value="1">Backend Developer</option>
+    <option value="2">Manager</option>
+    <option value="3">Clerk</option>
+    </select>
 <br>
 Salary:<input type="text" placeholder="" name="sal" class="tb">
 <br>

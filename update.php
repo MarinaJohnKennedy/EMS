@@ -125,9 +125,20 @@ if($emp):
     <form  method=post >
   <?php
   echo "First Name: <input type=text class=tb name='firstname' value=".$emp['fname']."><br>";
-  echo "Last Name: <input type=text class=tb name='lastname' value='".$emp['lname']."'><br>";
-  echo "Gender: <input type=text class=tb name='gender' value=".$emp['gender']."><br>";
-  echo "Mobile Number: <input type=text class=tb name='mobilenumber' value=".$emp['mobilenumber']."><br>";
+  echo "Last Name: <input type=text class=tb name='lastname' value='".$emp['lname']."'><br>";?>
+  Gender:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<?php  if($emp['gender']== 'Male') { ?>
+
+<input type="radio" name="gender" value="Male" checked> Male
+<input type="radio" name="gender" value="Female" unchecked> Female
+<?php  }
+else if($emp['gender']== 'Female')  { ?>
+    <input type="radio" name="gender" value="Male" unchecked> Male
+ <input type="radio" name="gender" value="Female" checked> Female
+
+<?php } 
+ 
+  echo "<br>Mobile Number: <input type=text class=tb name='mobilenumber' value=".$emp['mobilenumber']."><br>";
   echo "Email ID: <input type=text class=tb name='emailid' value=".$emp['emailid']."><br>";
   echo "Date of Birth: <input type=date class=tb name='dob' value=".$emp['dob']."><br>";
   echo "Address: <input type=text class=tb name='addr' value='".$emp['addr']."'><br><br>";
