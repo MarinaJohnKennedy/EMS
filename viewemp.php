@@ -56,7 +56,7 @@ mysqli_free_result($result);
         <td class=emailid><?php echo $emp['emailid']?></td>
        
         <td><a href="edetails.php?id=<?php echo $emp['id']?>"><input type=button class=sub name=view value=View></a></td>
-        <td><a href="exportbio.php?id=<?php echo $emp['id']?>"><input type=button class=sub name=expdf value='Export PDF'></a></td>
+        <td><a href="exportbio.php?id=<?php echo $emp['id']?>"><input type=button class=sub name=expdf value='Export Biodata'></a></td>
         </tr>
         
         </form>

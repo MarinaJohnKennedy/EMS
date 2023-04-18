@@ -21,8 +21,9 @@ $msg="";
 
 if(isset($_POST['import']))
 {
-  $file=$_FILES["excel"]["name"];
+  $file=$_FILES['excel']['name'];
   $extension= pathinfo($_FILES["excel"]["name"],PATHINFO_EXTENSION);
+  
    if($extension=='xls' || $extension=='xlsx' || $extension=='csv' )
    {
     $obj=PhpOffice\PhpSpreadsheet\IOFactory::load($file);

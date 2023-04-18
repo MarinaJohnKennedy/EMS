@@ -3,7 +3,8 @@
         "phpoffice/phpspreadsheet": "^1.28",
         "mpdf/mpdf": "^8.1",
         "fpdf/fpdf": "^1.85",
-        "dompdf/dompdf": "^2.0"
+        "dompdf/dompdf": "^2.0",
+        "phpoffice/phpexcel": "^1.8"
     },
     "config": {
         "platform-check": false
