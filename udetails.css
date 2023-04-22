@@ -33,7 +33,7 @@ body{
     font-family: 'Times New Roman', Times, serif;
     border-radius: 6px;
     padding: 10px;
-    width: 150px;
+    width: 125px;
     height: 30px;
     border: solid 0.5px;
     margin-top: 13px;
@@ -69,7 +69,7 @@ border-style: solid;
 .home1{
     position: relative;
     top:11px;
-  right: -90%;
+  right: -83%;
     font-family: 'Times New Roman', Times, serif;
  
     width:fit-content;
@@ -82,4 +82,7 @@ border-style: solid;
     border-style: solid;
    border-color: gray;
    color:black;
+}
+.data{
+    font-size: 26px;
 }

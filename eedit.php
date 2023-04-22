@@ -111,14 +111,14 @@ $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 if($count==1)
 {
     echo "<form>";
-
+    $ndob=date("d-m-Y",strtotime($row['dob']));
 echo "Employee ID: ".$row['id']."<br>";
 echo "First Name: ".$row['fname']."<br>";
 echo "Last Name: ".$row['lname']."<br>";
 echo "Gender: ".$row['gender']."<br>";
 echo "Mobile Number: ".$row['mobilenumber']."<br>";
 echo "Email ID: ".$row['emailid']."<br>";
-echo "Date of Birth: ".$row['dob']."<br>";
+echo "Date of Birth: ".$ndob."<br>";
 echo "Address: ".$row['addr']."<br>";
 echo "Role: ".$row['role']."<br>";
 echo "Salary: ".$row['sal']."<br>";

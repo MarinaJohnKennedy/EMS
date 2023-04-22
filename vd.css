@@ -12,15 +12,15 @@ fieldset
     font-family: 'Times New Roman', Times, serif;
     color:black;
     backdrop-filter: blur(10px);
-    width: 600px;
+    width: 1000px;
     margin-left: auto;
     margin-right: auto;
     vertical-align: middle;
     margin: 0;
     position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 10%;
+   left:12%
+    
 }
 .data{
     font-size: 24px;
@@ -71,6 +71,25 @@ position: relative;
    color:black;
 
 }
+.sub{
+    margin-top: 10px;
+ 
+    position: relative;
+font-family: 'Times New Roman', Times, serif;
+border-radius: 6px;
+border-color: gray;
+border-style: solid;
+background: transparent;
+backdrop-filter: blur(10px);
+font-size: 16px;
+width:90px;
+font-weight: 100;
+padding: 3px;
+border-style: solid;
+ border-color: gray;
+ color:black;
+
+}
 .home1
 {
     position: relative;
@@ -111,7 +130,7 @@ right: -77.5%;
     font-family: 'Times New Roman', Times, serif;
     border-radius: 6px;
     padding: 10px;
-   width: 400px;
+   width: 125px;
    overflow: visible;
     height: 30px;
     border: solid 0.5px;

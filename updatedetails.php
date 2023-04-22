@@ -46,11 +46,7 @@ $relationship=$_POST['relationship'];
         $msg="Not updated";
         }
     }
-    else
-{
-    $msg="Please fill in all the fields";
-
-}
+    
     }
     
     foreach ($_POST['institution'] as $key => $value) {
@@ -66,13 +62,9 @@ $relationship=$_POST['relationship'];
             $msg="Not updated";
             }
 
-  } else
-{
-    $msg="Please fill in all the fields";
-
-}}
+  } }
   foreach ($_POST['fname'] as $key => $value) {
-    if($_POST['institution'][$key]!=""&&$_POST['relationship'][$key]!=""&&$_POST['age'][$key]!="")
+    if($_POST['fname'][$key]!=""&&$_POST['relationship'][$key]!=""&&$_POST['age'][$key]!="")
     {
     $query3 = "INSERT INTO family_members(eid,name,relationship,age)VALUES ('" . $idss . "','" . $_POST['fname'][$key] . "','" . $_POST['relationship'][$key] . "','" . $_POST['age'][$key] . "')";
     if(mysqli_query($conn, $query3))
@@ -83,11 +75,7 @@ $relationship=$_POST['relationship'];
     {
     $msg="Not updated";
     }
-} else
-{
-    $msg="Please fill in all the fields";
-
-}}
+} }
     }
 
 
@@ -106,7 +94,7 @@ $relationship=$_POST['relationship'];
 <body>
 
 <a href="eedit.php"><input type="button" name="home" value="Home" class="home1"></a>
-    
+<a href="viewdetails.php"><input type="button" name="logout" value="View Details" class="home1"></a>
     <a href="index.php"><input type="button" name="logout" value="Logout" class="home1"></a>
 
 
@@ -202,7 +190,7 @@ $relationship=$_POST['relationship'];
 
                 $('#add3').click(function () {
                     i++;
-                    $('#dynamic_field3').append('<div class="form-row" id="row' + i + '"> <input type="text" class="tb" name="fname[]" placeholder="Name">  &nbsp;&nbsp; Relationship: <select name=relationship> <option value=0>Father</option><option value=1>Mother</option><option value=2>Brother</option><option value=3>Sister</option></select> &nbsp;&nbsp; <input type="text" class="tb" name="age[]" placeholder="Age">  <button type="button" name="remove" class="sub remove" id="' + i + '">Delete</button> </div>');
+                    $('#dynamic_field3').append('<div class="form-row" id="row' + i + '"> <input type="text" class="tb" name="fname[]" placeholder="Name">  &nbsp;&nbsp; Relationship: <select name=relationship[]> <option value=0>Father</option><option value=1>Mother</option><option value=2>Brother</option><option value=3>Sister</option></select> &nbsp;&nbsp; <input type="text" class="tb" name="age[]" placeholder="Age">  <button type="button" name="remove" class="sub remove" id="' + i + '">Delete</button> </div>');
                 });
                 $(document).on('click', '.btn_remove3', function () {
                     var button_id = $(this).attr("id");

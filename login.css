@@ -32,6 +32,7 @@ h1{color: azure;
     
 }
 .tb{
+    outline:0;
     color: gray;
     font-family: 'Times New Roman', Times, serif;
     border-radius: 6px;
