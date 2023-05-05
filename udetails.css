@@ -28,6 +28,26 @@ body{
     color: black;
     
 }
+.home2{
+    top:11px;
+right: -71%;
+
+position: relative;
+   
+    font-family: 'Times New Roman', Times, serif;
+ 
+    width:fit-content;
+    border-radius: 6px;
+    backdrop-filter: blur(10px);
+    font-size: 16px;
+    background: transparent;
+    padding: 3px;
+    margin-right:10px;
+    border-style: solid;
+   border-color: gray;
+   color:black;
+
+}
 .tb{
     color: black;
     font-family: 'Times New Roman', Times, serif;

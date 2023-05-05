@@ -26,6 +26,7 @@ if(isset($_POST['update']))
     $email=$_POST['emailid'];
     $dob=$_POST['dob'];
     $addr=$_POST['addr'];
+    
 
     if(filter_has_var(INPUT_POST,'update'))
     {
@@ -63,19 +64,26 @@ if(isset($_POST['update']))
             header("Location:edetails.php?id=".$_GET['id']);
             $msg="Updated account details";
             
+            
+
             }
             else
             {
             $msg="Not updated";
             }
+        
 
         }
+        
         catch(Exception $e)
         {
             echo $e->getMessage();
         }
+    }
     }}}
-       $relationship = $_POST['relationship'];
+    if(isset($_POST['update']))
+{
+    $relationship = $_POST['relationship'];
     switch ($relationship) {
         case 0:
         $relationship="Father";
@@ -162,11 +170,13 @@ if(isset($_POST['delete']))
 
     
 {
-    foreach ($_POST['delete'] as $key => $value) 
+  
+$delete=$_POST['delete'];
 
-    {
+
+     
    
-        $query4="delete from previous_experience where id='".$_POST['hidden'][$key]."'";
+        $query4="delete from previous_experience where id='$delete'";
 
         $result=mysqli_query($conn, $query4);
         if($result)
@@ -180,15 +190,14 @@ if(isset($_POST['delete']))
                         $msg="Not Deleted";
                         }
 }
-}
+
 if(isset($_POST['delete1'])) 
 
     
 {
-foreach ($_POST['delete1'] as $key => $value) 
+  $delete1=$_POST['delete1'];
 
-{
-            $query5="delete from education_qualifications where id='".$_POST['hidden1'][$key]."'";
+            $query5="delete from education_qualifications where id='$delete1'";
 
             $result=mysqli_query($conn, $query5);
             if($result)
@@ -202,15 +211,14 @@ foreach ($_POST['delete1'] as $key => $value)
                             $msg="Not Deleted";
                             }
     }
-}
+
 if(isset($_POST['delete2'])) 
 
     
 {
-    foreach ($_POST['delete2'] as $key => $value) 
-
-    {
-            $query6="delete from family_members where id='".$_POST['hidden2'][$key]."'";
+  $delete2=$_POST['delete2'];
+   
+            $query6="delete from family_members where id='$delete2'";
 
             $result=mysqli_query($conn, $query6);
             if($result)
@@ -224,7 +232,6 @@ if(isset($_POST['delete2']))
                             $msg="Not Deleted";
                             }
     }
-}
 
                     
                     
@@ -250,12 +257,13 @@ if(isset($_POST['delete2']))
     
     <h1>Update Account Details</h1>
     <div>
+    <form  method=post >
         <?php 
   foreach($emps as $emp):
 if($emp):
   
    ?>
-    <form  method=post >
+    
   <?php
   echo "First Name: <input type=text class=tb name='firstname' value=".$emp['fname']."><br>";
   echo "Last Name: <input type=text class=tb name='lastname' value='".$emp['lname']."'><br>";?>
@@ -288,7 +296,7 @@ endforeach;
 ?>
 
 <h2>Job Experience</h2>
-<form method=post>
+
 <div id="dynamic_field">
 
 <br>
@@ -318,18 +326,18 @@ if($count==0)
     echo "Role: <input type=text  name=role[] class=tb value='$role'>&nbsp;&nbsp;&nbsp;&nbsp;";
     echo "Start Date: <input type=date  name=cstart[] class=tb value='$cstart'>&nbsp;&nbsp;&nbsp;&nbsp;";
     echo "End Date: <input type=date  name=cend[] class=tb value='$cend'>&nbsp;&nbsp;&nbsp;&nbsp;";
-    echo "<input type=submit name=delete[] id=".$hidden." class='sub remove' value='Delete'><br>";
+    echo "<button type=submit name=delete id=".$hidden." class='sub remove' value='$hidden'>Delete</button><br>";
     
 endforeach;
       ?>
-      </form>
+      
 </div>
 
 <br>
 
 <div id="dynamic_field2">
 <h2>Education Qualifications</h2>
-<form method=post>
+
 <br>
 <?php
 
@@ -358,15 +366,15 @@ if($count==0)
     echo "Start Date: <input type=date  name=start[] class=tb value='$start'>&nbsp;&nbsp;&nbsp;&nbsp;";
     echo "End Date: <input type=date  name=end[] class=tb value='$end'>&nbsp;&nbsp;&nbsp;&nbsp;";
     echo "Percent: <input type=text  name=percent[] class=tb value='$percent'>&nbsp;&nbsp;&nbsp;&nbsp;";
-    echo "<input type=submit name=delete1[]  id=".$hidden1." class='sub remove' value='Delete'><br>";
-endforeach;
+    echo "<button type=submit name=delete1 id=".$hidden1." class='sub remove' value='$hidden1'>Delete</button><br>";
+    endforeach;
       ?>
-</form>
+
 </div>
 <div id="dynamic_field3">
 <h2>Add a Family Member</h2>  
 <br>
-<form method=post>
+
 <?php
 
 $query="select id,name,relationship,age from family_members where eid='$idss'";
@@ -419,17 +427,17 @@ if($count==0)
  
     echo "Age: <input type=text  name=age[] class=tb value='$age'>&nbsp;&nbsp;&nbsp;&nbsp;";
 
-    echo "<input type=submit name=delete2[]  id=".$hidden2." class='sub remove' value='Delete'><br>";
-endforeach;
+    echo "<button type=submit name=delete2 id=".$hidden2." class='sub remove' value='$hidden2'>Delete</button><br>";
+    endforeach;
       ?>
-</form>
+
 </div>
 <br>
-
-
 <a href="edetails.php?id=<?php echo $emp['id']?>"><input type=submit class=update name=update value=Update></a>
 
 </form>
+
+
 </div>
 </fieldset>
       

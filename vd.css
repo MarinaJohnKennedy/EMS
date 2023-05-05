@@ -12,15 +12,11 @@ fieldset
     font-family: 'Times New Roman', Times, serif;
     color:black;
     backdrop-filter: blur(10px);
-    width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-    vertical-align: middle;
-    margin: 0;
+    width: 1150px;
+    margin: 0 auto;
+    margin-bottom: 7%;
     position: relative;
     top: 10%;
-   left:12%
-    
 }
 .data{
     font-size: 24px;
@@ -130,7 +126,7 @@ right: -77.5%;
     font-family: 'Times New Roman', Times, serif;
     border-radius: 6px;
     padding: 10px;
-   width: 125px;
+   width: 120px;
    overflow: visible;
     height: 30px;
     border: solid 0.5px;

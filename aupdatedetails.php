@@ -1,12 +1,21 @@
 <?php
 require("db.php");
 session_start();
-$idss=$_SESSION['ids'];
+  
+$idss="";
 $msg='';
+if(isset($_GET['id']))
+    {
+        $idss=mysqli_real_escape_string($conn,$_GET['id']);
+        $query="select id,fname,lname,gender,mobilenumber,emailid,dob,addr,role,sal,design from employees where id='".$_GET['id']."'";
+        $result=mysqli_query($conn, $query);
+        $emps=mysqli_fetch_all($result,MYSQLI_ASSOC);
+        mysqli_free_result($result);
+    }
 
-
-if(isset($_POST['submit']))
+if(isset($_POST['update']))
 { 
+   
     $relationship = $_POST['relationship'];
     switch ($relationship) {
         case 0:
@@ -24,7 +33,7 @@ if(isset($_POST['submit']))
        }
     $company=$_POST['company'];
     $role=$_POST['role'];
-
+   
    $institution=$_POST['institution'];
     $exam=$_POST['exam'];
     $percent=$_POST['percent'];
@@ -32,29 +41,35 @@ $relationship=$_POST['relationship'];
     $fname=$_POST['fname'];
     $age=$_POST['age'];
     
-     
+
+
        foreach ($_POST['company'] as $key => $value) 
        {
+        
         if($_POST['company'][$key]!=""&&$_POST['role'][$key]!=""&&$_POST['cstart'][$key]!=""&&$_POST['cend'][$key]!="")
         {
-        $query1 = "INSERT INTO previous_experience(eid,company,role,start,end)VALUES ('" . $idss . "','" . $_POST['company'][$key] . "','" . $_POST['role'][$key] . "','" . $_POST['cstart'][$key] . "','" . $_POST['cend'][$key] . "')";
+            
+        $query1 = "INSERT INTO previous_experience(eid,company,role,start,end)VALUES (' $idss ','" . $_POST['company'][$key] . "','" . $_POST['role'][$key] . "','" . $_POST['cstart'][$key] . "','" . $_POST['cend'][$key] . "')";
 
         if(mysqli_query($conn, $query1))
         {
-          $msg="Updated details successfully";
+           
+          $msg="Updated details successfully ";
+        
         }
         else
         {
         $msg="Not updated";
         }
     }
-    
-    }
+}
+
     
     foreach ($_POST['institution'] as $key => $value) {
         if($_POST['institution'][$key]!=""&&$_POST['exam'][$key]!=""&&$_POST['start'][$key]!=""&&$_POST['end'][$key]!=""&&$_POST['percent'][$key]!="")
         {
-      $query2 = "INSERT INTO education_qualifications(eid,institution,exam,start,end,percent)VALUES ('" . $idss . "','" . $_POST['institution'][$key] . "','" . $_POST['exam'][$key] . "','" . $_POST['start'][$key] . "','" . $_POST['end'][$key] . "','" . $_POST['percent'][$key] . "')";
+        
+      $query2 = "INSERT INTO education_qualifications(eid,institution,exam,start,end,percent)VALUES ('" .$idss."','" . $_POST['institution'][$key] . "','" . $_POST['exam'][$key] . "','" . $_POST['start'][$key] . "','" . $_POST['end'][$key] . "','" . $_POST['percent'][$key] . "')";
       if(mysqli_query($conn, $query2))
             {
                 $msg="Updated details successfully";
@@ -68,9 +83,11 @@ $relationship=$_POST['relationship'];
   foreach ($_POST['fname'] as $key => $value) {
     if($_POST['fname'][$key]!=""&&$_POST['relationship'][$key]!=""&&$_POST['age'][$key]!="")
     {
-    $query3 = "INSERT INTO family_members(eid,name,relationship,age)VALUES ('" . $idss . "','" . $_POST['fname'][$key] . "','" . $_POST['relationship'][$key] . "','" . $_POST['age'][$key] . "')";
+      
+    $query3 = "INSERT INTO family_members(eid,name,relationship,age)VALUES ('" .$idss. "','" . $_POST['fname'][$key] . "','" . $_POST['relationship'][$key] . "','" . $_POST['age'][$key] . "')";
     if(mysqli_query($conn, $query3))
     {
+       
         $msg="Updated details successfully";
     }
     else
@@ -79,7 +96,6 @@ $relationship=$_POST['relationship'];
     }
 } }
     }
-
 
 ?>
 
@@ -90,14 +106,16 @@ $relationship=$_POST['relationship'];
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Create Employee</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="udetails.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="vd.css">
     
 </head>
 <body>
 
-<a href="eedit.php"><input type="button" name="home" value="Home" class="home1"></a>
-<a href="viewdetails.php"><input type="button" name="logout" value="View Details" class="home1"></a>
-    <a href="index.php"><input type="button" name="logout" value="Logout" class="home1"></a>
+<a href="ahome.php"><input type="button" name="home" value="Home" class="home2"></a>
+<a href="viewemp.php"><input type="button" name="home" value="Employees List" class="home2"></a>
+<a href="edetails.php?id=<?php echo $_GET['id']?>"><input type="button" name="home" value="Employee Details" class="home2"></a>
+    
+     <a href="index.php"><input type="button" name="logout" value="Logout" class="home2"></a>
 
 
     
@@ -110,7 +128,7 @@ $relationship=$_POST['relationship'];
     <div class="alert"> <?php echo $msg;?> </div><?php endif; ?>
     
 
-<form method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>" >
+<form method="POST"  >
 
 <h2>Job Experience</h2>
 <br>
@@ -158,8 +176,9 @@ $relationship=$_POST['relationship'];
 <br>
 
 
-   
-<input type="submit" class="sub" name="submit" value="Submit">
+<a href="edetails.php?id=<?php echo $emp['id']?>"><input type=submit class=update name=update value=Submit></a>
+
+
 </form>
 </fieldset>
       

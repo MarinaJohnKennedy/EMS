@@ -208,7 +208,7 @@ if($count==0)
 endforeach;
     ?>
     <br>
-   
+    <a href="aupdatedetails.php?id=<?php echo $emp['id']?>"><input type=button name=update value='Add Employee Details' class=update></a>&nbsp&nbsp
 <a href="update.php?id=<?php echo $emp['id']?>"><input type=button name=update value='Update Employee Details' class=update></a>&nbsp&nbsp
 <input type=submit name=delete value='Delete Employee' class=update>
 </form>
