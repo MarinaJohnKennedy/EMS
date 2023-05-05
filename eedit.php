@@ -92,6 +92,7 @@ if(isset($_POST['update']))
 </head>
     <body>
    
+    <a href="changepassword.php"><input type="button" name="password" value="Change Password" class="home1"></a>
    
     <a href="index.php"><input type="button" name="logout" value="Logout" class="home1"></a>
 <fieldset class=fda>
