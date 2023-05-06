@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 06, 2023 at 11:37 AM
+-- Generation Time: May 06, 2023 at 11:48 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -43,9 +43,8 @@ CREATE TABLE `education_qualifications` (
 
 INSERT INTO `education_qualifications` (`id`, `eid`, `institution`, `exam`, `start`, `end`, `percent`) VALUES
 (137, 144, 'kjc', 'bca', '2023-04-20', '2023-04-21', 78),
-(138, 145, 'fbfxb', 'fb xf', '2023-05-24', '2023-05-30', 56),
-(139, 145, 'fxb', 'fxbf', '2023-05-04', '2023-05-12', 34),
-(152, 0, 'kjc', 'bc', '2023-05-31', '2023-05-30', 76);
+(154, 144, 'kjc', 'mca', '2023-05-03', '2023-05-04', 77),
+(155, 145, 'kjc', 'mca', '2023-05-23', '2023-05-23', 78);
 
 -- --------------------------------------------------------
 
@@ -77,7 +76,7 @@ INSERT INTO `employees` (`id`, `fname`, `lname`, `gender`, `mobilenumber`, `emai
 (1, 'Marina', 'John', 'Female', 9845696551, 'marina@gmail.com', 'marinajohn20', '2023-03-01', 'Bangalore', 'Developer', 10000, 'Junior Developer', 'Admin'),
 (2, 'Monu', 'J K', 'Male', 6361132867, 'monu@gmail.com', 'monicajohn', '1999-09-07', '1923,Samuddhi,AECS A Block, Singasandra, Bangalore-560068', 'HR', 24000, 'HR Core', 'Admin'),
 (144, 'John', 'Doe', 'Female', 1234512345, 'johndoe@gmail.com', 'johndoe123', '1990-01-31', 'America', 'Frontend Developer', 150000, 'Software Developer', 'Employee'),
-(145, 'Sam', 'Abbyy', 'Male', 1234567895, 'sam@gmail.com', 'sam1234567', '1990-01-01', 'Kerala', 'Frontend Developer', 20000, 'Design', 'Employee');
+(145, 'Sam', 'Abby', 'Male', 1234567895, 'sam@gmail.com', 'sam1234567', '1990-01-01', 'Kerala', 'Frontend Developer', 20000, 'Design', 'Employee');
 
 -- --------------------------------------------------------
 
@@ -100,7 +99,7 @@ CREATE TABLE `family_members` (
 INSERT INTO `family_members` (`id`, `eid`, `name`, `relationship`, `age`) VALUES
 (83, 144, 'monu', 'Sister', 24),
 (91, 0, 'latha late', '3', 23),
-(93, 145, 'tom', '0', 50);
+(93, 145, 'tom', 'Father', 50);
 
 -- --------------------------------------------------------
 
@@ -122,9 +121,10 @@ CREATE TABLE `previous_experience` (
 --
 
 INSERT INTO `previous_experience` (`id`, `eid`, `company`, `role`, `start`, `end`) VALUES
-(60, 145, 'bdfx', 'bdcbc', '2023-05-11', '2023-05-15'),
-(61, 145, 'fbfx', 'fxbx', '2023-05-03', '2023-05-04'),
-(96, 144, 'three38', 'web developer', '2023-05-03', '2023-05-03');
+(96, 144, 'three38', 'web developer', '2023-05-03', '2023-05-03'),
+(117, 144, 'ibm', 'tsa', '2023-05-03', '2023-05-04'),
+(118, 144, 'kyndryl', 'stsa', '2023-05-01', '2023-05-05'),
+(119, 145, 'three38', 'developer', '2023-05-06', '2023-05-07');
 
 --
 -- Indexes for dumped tables
@@ -162,7 +162,7 @@ ALTER TABLE `previous_experience`
 -- AUTO_INCREMENT for table `education_qualifications`
 --
 ALTER TABLE `education_qualifications`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=154;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=156;
 
 --
 -- AUTO_INCREMENT for table `employees`
@@ -180,7 +180,7 @@ ALTER TABLE `family_members`
 -- AUTO_INCREMENT for table `previous_experience`
 --
 ALTER TABLE `previous_experience`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=120;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
