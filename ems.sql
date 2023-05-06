@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 06, 2023 at 11:48 AM
+-- Generation Time: May 06, 2023 at 11:50 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -98,7 +98,6 @@ CREATE TABLE `family_members` (
 
 INSERT INTO `family_members` (`id`, `eid`, `name`, `relationship`, `age`) VALUES
 (83, 144, 'monu', 'Sister', 24),
-(91, 0, 'latha late', '3', 23),
 (93, 145, 'tom', 'Father', 50);
 
 -- --------------------------------------------------------
