@@ -140,7 +140,6 @@ $dompdf = new Dompdf;
 $dompdf->loadHtml($html);
 $dompdf->render();
 
-
 $dompdf->stream("Biodata_".$fname.".pdf");
 
 ?>

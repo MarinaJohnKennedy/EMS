@@ -91,6 +91,7 @@ if(isset($_POST['update']))
 
 </head>
     <body>
+    <a href="updatedetails.php"><input type="button" name="add" value="Add Details" class="home1"></a>
    
     <a href="changepassword.php"><input type="button" name="password" value="Change Password" class="home1"></a>
    

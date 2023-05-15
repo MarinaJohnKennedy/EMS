@@ -96,7 +96,7 @@ $relationship=$_POST['relationship'];
 <body>
 
 <a href="eedit.php"><input type="button" name="home" value="Home" class="home1"></a>
-<a href="viewdetails.php"><input type="button" name="logout" value="View Details" class="home1"></a>
+
     <a href="index.php"><input type="button" name="logout" value="Logout" class="home1"></a>
 
 
