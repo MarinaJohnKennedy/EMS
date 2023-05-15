@@ -51,7 +51,7 @@ if($count==0)
 {
     $msg="No Previous Experience";
 }
-
+$html.="<h1><center>Job Experience</center></h1>";
   foreach( $rows as $row ):
   
     
@@ -59,7 +59,7 @@ if($count==0)
     $role=$row['role'];
     $cstart=date("d-m-Y",strtotime($row['start']));
     $cend=date("d-m-Y",strtotime($row['end']));
-    $html.="<h1><center>Job Experience</center></h1>";
+   
     $html.="<b>Company: </b>".$company."&nbsp;&nbsp;&nbsp;&nbsp;";
     $html.="<b>Role: </b>".$role."&nbsp;&nbsp;&nbsp;&nbsp;";
     $html.= "<b>Start Date: </b>".$cstart."&nbsp;&nbsp;&nbsp;&nbsp;";
@@ -78,7 +78,7 @@ if($count==0)
 {
     $msg="No Education Qualifications";
 }
-
+$html.="<h1><center>Educational Qualifications</center></h1>";
   foreach( $rows as $row ):
   
     
@@ -87,7 +87,7 @@ if($count==0)
     $start=date("d-m-Y",strtotime($row['start']));
     $end=date("d-m-Y",strtotime($row['start']));
     $percent=$row['percent'];
-    $html.="<h1><center>Educational Qualifications</center></h1>";
+   
     $html.= "<b>Institution: </b>".$institution."&nbsp;&nbsp;&nbsp;&nbsp;";
     $html.= "<b>Exam: </b>".$exam."&nbsp;&nbsp;&nbsp;&nbsp;";
     $html.="<b>Start Date: </b>".$start."&nbsp;&nbsp;&nbsp;&nbsp;";
@@ -106,7 +106,7 @@ if($count==0)
 {
     $msg="No Family Members";
 }
-
+$html.="<h1><center> Family Members</center></h1>";
   foreach( $rows as $row ):
   
     
@@ -129,7 +129,7 @@ if($count==0)
        $relationship="Sister";
        break;
        }
-       $html.="<h1><center>Educational Qualifications</center></h1>";
+      
        $html.= "<b>Name: </b>".$name."&nbsp;&nbsp;&nbsp;&nbsp;";
        $html.= "<b>Relationship: </b>".$relationship."&nbsp;&nbsp;&nbsp;&nbsp;";
        $html.= "<b>Age: </b>".$age."<br>";
